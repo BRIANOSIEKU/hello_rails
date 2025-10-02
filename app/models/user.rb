@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :facts, dependent: :destroy
-  has_many :user_fact_likes, dependent: :destroy
+  # has_many :facts, dependent: :destroy
+  # has_many :user_fact_likes, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   validates :token, presence: true, uniqueness: true
@@ -10,7 +10,7 @@ class User < ApplicationRecord
   private
 
   def ensure_token
-    self.token ||= SecureRandom.hex(16) # generates a random token
+    self.token ||= SecureRandom.hex(16)
   end
 end
 
