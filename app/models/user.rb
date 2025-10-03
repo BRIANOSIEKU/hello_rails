@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # has_many :facts, dependent: :destroy
+has_many :facts, dependent: :destroy
   # has_many :user_fact_likes, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
